@@ -9,7 +9,7 @@ import javafx.scene.web.WebView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LesboutonsController implements Initializable {
+public class LesBoutonsController implements Initializable {
 
     public WebView buttonWebview;
     public Button btn1;

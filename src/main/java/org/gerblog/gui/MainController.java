@@ -1,7 +1,8 @@
 package org.gerblog.gui;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.effects.JFXDepthManager;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -15,6 +16,7 @@ import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.gerblog.gui.exemple.ExempleTileController;
 import org.gerblog.libexemple.Exemple;
 
 import java.awt.*;
@@ -24,12 +26,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    public Button lesBoutons;
-    public Button lesTextFieldButt;
     public Hyperlink lienCours;
     public VBox listBox;
     final static Exemple ex = new Exemple();
-
 
     /**
      * La méthode prend le texte du bouton et envoie le fxml correspondant
@@ -37,22 +36,23 @@ public class MainController implements Initializable {
      * @param actionEvent
      * @throws IOException
      */
-    public void ouvreSceneExemple(ActionEvent actionEvent) throws IOException {
+    public static void ouvreSceneExemple(ActionEvent actionEvent) throws IOException {
         Button btn = (Button) actionEvent.getSource();
         String evenement = btn.getText();
         String action = switch (evenement) {
+            //inscrire ici le couple nom du bouton et package/nom du fxml
             case "Les boutons" -> "buttons/les_boutons";
             case "Les champs texte" -> "champs/les_champs";
-            case "Les Sliders" -> "sliders/les_sliders";
-            default -> null;
+            //case "Les Sliders" -> "sliders/les_sliders";
+            default -> "default";
         };
 
-
-        Stage buttonStage = new Stage();
+        // génère et lance un stage avec les éléments fournis
+        Stage exempleStage = new Stage();
         Parent exempleRoot = loadFenExemple(action);
         Scene buttScene = new Scene(exempleRoot);
-        buttonStage.setScene(buttScene);
-        buttonStage.show();
+        exempleStage.setScene(buttScene);
+        exempleStage.show();
     }
 
     /**
@@ -62,34 +62,36 @@ public class MainController implements Initializable {
      * @return
      * @throws IOException
      */
-    public Parent loadFenExemple(String chemin) throws IOException {
-        return FXMLLoader.load(getClass().getResource("/org/gerblog/gui/" + chemin + ".fxml"));
+    public static Parent loadFenExemple(String chemin) throws IOException {
+        return FXMLLoader.load(MainController.class.getResource("/org/gerblog/gui/" + chemin + ".fxml"));
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        lienCours.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                try {
-                    Desktop.getDesktop().browse(URI.create("https://germainsip.github.io/post/cours/java/javafxelmts/"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        lienCours.setOnAction(event -> {
+            try {
+                Desktop.getDesktop().browse(URI.create("https://germainsip.github.io/post/cours/java/javafxelmts/"));
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
 
-        for (String key: ex.elmts.keySet()) {
-            genExemple(key,ex.elmts.get(key));
+        for (String key : ex.elmts.keySet()) {
+            try {
+                genExemple(key, ex.elmts.get(key));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-
 
 
     }
 
-    private void genExemple(String name, String comment) {
-        HBox boiteExemple = new HBox();
-        Button button = new Button(name);
+    private void genExemple(String name, String comment) throws IOException {
+        /*HBox boiteExemple = new HBox();
+        JFXDepthManager.setDepth(boiteExemple, 1);
+        JFXButton button = new JFXButton(name);
+        button.setStyle("-fx-background-color: #88BA3F");
         button.setPrefWidth(200);
         button.setAlignment(Pos.CENTER_LEFT);
         button.setOnAction(actionEvent -> {
@@ -100,17 +102,20 @@ public class MainController implements Initializable {
             }
         });
         boiteExemple.setSpacing(10);
-        boiteExemple.setSpacing(10);
         boiteExemple.setPrefWidth(539);
         boiteExemple.setPrefHeight(47);
         boiteExemple.setPadding(new Insets(10));
         boiteExemple.setAlignment(Pos.CENTER_LEFT);
-        InnerShadow ombre = new InnerShadow();
+        //InnerShadow ombre = new InnerShadow();
         boiteExemple.setStyle("-fx-background-color: white");
-        boiteExemple.setEffect(ombre);
+        //boiteExemple.setEffect(ombre);
 
-        boiteExemple.getChildren().addAll(button, new Label(comment));
-
-        listBox.getChildren().add(boiteExemple);
+        boiteExemple.getChildren().addAll(button, new Label(comment));*/
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/gerblog/gui/exemple/exemple_tile.fxml"));
+        Parent ex = fxmlLoader.load();
+        ExempleTileController controller = fxmlLoader.<ExempleTileController>getController();
+        controller.setValues(name,comment);
+       // listBox.getChildren().add(boiteExemple);
+        listBox.getChildren().add(ex);
     }
 }

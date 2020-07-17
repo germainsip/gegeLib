@@ -52,7 +52,7 @@
           </Tab>
         </tabs>
       </TabPane>
-      <HBox layoutX="14.0" layoutY="6.0">
+      <HBox layoutX="14.0" layoutY="6.0" spacing="8.0">
          <children>
             <Label text="Les éléments de JFX">
                <font>
@@ -61,9 +61,10 @@
             </Label>
             <Hyperlink fx:id="lienCours" text="le cours">
                <HBox.margin>
-                  <Insets left="350.0" />
+                  <Insets left="300.0" />
                </HBox.margin>
             </Hyperlink>
+            <Hyperlink fx:id="lienJavadoc" text="doc javaFX" />
          </children>
       </HBox>
    </children>

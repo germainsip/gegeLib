@@ -19,11 +19,12 @@ public class Exempliser {
 
            //FileReader reader = new FileReader(file);
         try {
-            File file = new File(getClass().getResource("/org/gerblog/libexemple/liste_exemples.json").getPath());
-            FileReader fileReader = new FileReader(file);
+           // File file = new File(getClass().getResource("/org/gerblog/libexemple/liste_exemples.json").getPath());
+            InputStream stream = getClass().getResourceAsStream("/org/gerblog/libexemple/liste_exemples.json");
+          //  FileReader fileReader = new FileReader(file);
 
             ObjectMapper mapper = new ObjectMapper();
-            this.exTab = mapper.readValue(file,Exemple[].class);
+            this.exTab = mapper.readValue(stream,Exemple[].class);
             //BufferedReader br = new BufferedReader(fileReader);
 
           //  String st;

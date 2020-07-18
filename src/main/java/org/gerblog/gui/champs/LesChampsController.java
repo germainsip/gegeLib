@@ -63,6 +63,6 @@ public class LesChampsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        webChamps.getEngine().load("https://germainsip.github.io/post/cours/java/javafxelmts/#les-button-et-label");
+        webChamps.getEngine().load("https://germainsip.github.io/post/cours/java/javafxelmts/#les-champs-texte");
     }
 }

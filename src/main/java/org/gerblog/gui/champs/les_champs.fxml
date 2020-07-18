@@ -28,7 +28,7 @@
                         <Label text="Nom" />
                         <TextField fx:id="nomField" />
                         <Label layoutX="10.0" layoutY="10.0" text="Prénom" />
-                        <TextField fx:id="prenomField" />
+                        <TextField fx:id="prenomField" promptText="prénom" />
                         <Label layoutX="10.0" layoutY="185.0" text="Tel" />
                         <TextField fx:id="telField" />
                         <Label layoutX="10.0" layoutY="212.0" text="Mot de passe" />

@@ -1,12 +1,15 @@
 package org.gerblog.gui.champs;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import org.gerblog.tools.Verification;
 
 import java.net.URL;
@@ -25,6 +28,7 @@ public class LesChampsController implements Initializable {
     public Label telLab;
     public Label passLab;
     public WebView webChamps;
+    public JFXButton fermButt;
 
 
     public void sendHandle() {
@@ -64,5 +68,11 @@ public class LesChampsController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         webChamps.getEngine().load("https://germainsip.github.io/post/cours/java/javafxelmts/#les-champs-texte");
+    }
+
+    public void closeHandle(ActionEvent actionEvent) {
+        final Node source = (Node) actionEvent.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

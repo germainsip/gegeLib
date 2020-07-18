@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -16,11 +17,16 @@
    <children>
       <VBox prefHeight="475.0" prefWidth="635.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Les textField">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER" spacing="60.0">
+               <children>
+                  <Label text="Les textField">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="fermButt" onAction="#closeHandle" text="Fermer" />
+               </children>
+            </HBox>
             <HBox spacing="100.0">
                <children>
                   <VBox spacing="10.0">

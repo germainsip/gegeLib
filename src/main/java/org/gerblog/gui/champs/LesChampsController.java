@@ -10,13 +10,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import org.gerblog.tools.FenTool;
 import org.gerblog.tools.Verification;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
-public class LesChampsController implements Initializable {
+public class LesChampsController extends FenTool implements Initializable {
 
     public Button sendButt;
     public TextField nomField;
@@ -27,7 +28,6 @@ public class LesChampsController implements Initializable {
     public Label prenomLab;
     public Label telLab;
     public Label passLab;
-    public WebView webChamps;
     public JFXButton fermButt;
 
 
@@ -67,12 +67,13 @@ public class LesChampsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        webChamps.getEngine().load("https://germainsip.github.io/post/cours/java/javafxelmts/#les-champs-texte");
+       // webChamps.getEngine().load("https://germainsip.github.io/post/cours/java/javafxelmts/#les-champs-texte");
+        loadCours("les-champs-texte");
     }
 
-    public void closeHandle(ActionEvent actionEvent) {
+    /*public void closeHandle(ActionEvent actionEvent) {
         final Node source = (Node) actionEvent.getSource();
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
-    }
+    }*/
 }

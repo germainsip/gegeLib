@@ -2,9 +2,12 @@ package org.gerblog.gui.buttons;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +18,9 @@ public class LesBoutonsController implements Initializable {
     public Button btn1;
     public Button btn2;
     public Label res;
+public double xOffset;
+public double yOffset;
+    public Button fermeButt;
 
 
     @Override
@@ -35,5 +41,12 @@ public class LesBoutonsController implements Initializable {
         String message = "Le "+btnActive.getText()+" vient d'être cliqué!";
         //envoie du message dans le label
         res.setText(message);
+    }
+
+
+    public void closeHandle(ActionEvent actionEvent) {
+        final Node source = (Node) actionEvent.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

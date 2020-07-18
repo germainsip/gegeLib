@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.gerblog.libexemple.Exemple;
 import org.gerblog.tools.Exempliser;
 import org.gerblog.tools.GuiTool;
@@ -24,6 +25,8 @@ public class MainController implements Initializable {
     public VBox listBox;
     final static Exemple ex = new Exemple();
     public Hyperlink lienJavadoc;
+    private static double xOffset;
+    private static double yOffset;
 
     /**
      * La méthode prend le texte du bouton et envoie le fxml correspondant
@@ -47,7 +50,19 @@ public class MainController implements Initializable {
         Parent exempleRoot = loadFenExemple(action);
         Scene buttScene = new Scene(exempleRoot);
         exempleStage.setScene(buttScene);
+        // enlève la bordure os de la le fenêtre
+        exempleStage.initStyle(StageStyle.UNDECORATED);
         exempleStage.show();
+
+        // Méthodes pour permettre le dragg de la fenêtre
+        buttScene.setOnMousePressed(event -> {
+            xOffset = exempleStage.getX() - event.getScreenX();
+            yOffset = exempleStage.getY() - event.getScreenY();
+        });
+        buttScene.setOnMouseDragged(event -> {
+            exempleStage.setX(event.getScreenX() + xOffset);
+            exempleStage.setY(event.getScreenY() + yOffset);
+        });
     }
 
     /**
@@ -87,13 +102,12 @@ public class MainController implements Initializable {
                 e.printStackTrace();
             }
         }*/
-        for (Exemple exT : ex1.exTab)
-              {
-                  try {
-                      GuiTool.genExemple(exT.getName(), exT.getComment(),listBox);
-                  } catch (IOException e) {
-                      e.printStackTrace();
-                  }
+        for (Exemple exT : ex1.exTab) {
+            try {
+                GuiTool.genExemple(exT.getName(), exT.getComment(), listBox);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 

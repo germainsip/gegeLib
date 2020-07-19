@@ -37,13 +37,7 @@ public class MainController implements Initializable {
     public static void ouvreSceneExemple(ActionEvent actionEvent) throws IOException {
         Button btn = (Button) actionEvent.getSource();
         String evenement = btn.getText();
-        String action = switch (evenement) {
-            //inscrire ici le couple nom du bouton et package/nom du fxml
-            case "Les Boutons" -> "buttons/les_boutons";
-            case "Les champs texte" -> "champs/les_champs";
-            //case "Les Sliders" -> "sliders/les_sliders";
-            default -> "default";
-        };
+        String action = GuiTool.route(evenement);
 
         // génère et lance un stage avec les éléments fournis
         Stage exempleStage = new Stage();

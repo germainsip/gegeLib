@@ -12,14 +12,14 @@
    <children>
       <VBox prefHeight="475.0" prefWidth="635.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" spacing="60.0">
+            <HBox alignment="CENTER" spacing="100.0">
                <children>
-                  <Label text="Les textField">
+                  <Label text="Les textField" textFill="#88ba3f">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="fermButt" onAction="#closeHandle" text="Fermer" />
+                  <JFXButton fx:id="fermButt" onAction="#closeHandle" style="-fx-background-color: #88ba3f;" text="Fermer" textFill="WHITE" />
                </children>
             </HBox>
             <HBox spacing="100.0">

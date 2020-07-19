@@ -1,4 +1,6 @@
 package org.gerblog.gui;
 
-public class DefaultController {
+import org.gerblog.tools.FenTool;
+
+public class DefaultController extends FenTool {
 }

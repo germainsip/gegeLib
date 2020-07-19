@@ -2,12 +2,9 @@ package org.gerblog.gui.buttons;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
 import org.gerblog.tools.FenTool;
 
 import java.net.URL;
@@ -24,7 +21,6 @@ public class LesBoutonsController extends FenTool implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-      //  buttonWebview.getEngine().load("https://germainsip.github.io/post/cours/java/javafxelmts/#les-button-et-label");
         loadCours("les-button-et-label");
     }
 
@@ -45,9 +41,5 @@ public class LesBoutonsController extends FenTool implements Initializable {
     }
 
 
-    /*public void closeHandle(ActionEvent actionEvent) {
-        final Node source = (Node) actionEvent.getSource();
-        final Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
-    }*/
+
 }

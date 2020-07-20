@@ -89,13 +89,7 @@ public class MainController implements Initializable {
             }
         });
 
-       /* for (String key : ex.elmts.keySet()) {
-            try {
-                GuiTool.genExemple(key, ex.elmts.get(key),listBox);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }*/
+
         for (Exemple exT : ex1.exTab) {
             try {
                 GuiTool.genExemple(exT.getName(), exT.getComment(), listBox);
@@ -107,12 +101,5 @@ public class MainController implements Initializable {
 
     }
 
-    /*private void genExemple(String name, String comment) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/gerblog/gui/exemple/exemple_tile.fxml"));
-        Parent ex = fxmlLoader.load();
-        ExempleTileController controller = fxmlLoader.<ExempleTileController>getController();
-        controller.setValues(name,comment);
-        listBox.getChildren().add(ex);
-    }*/
 }

@@ -6,7 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-public class FenTool {
+public abstract class FenTool {
     public WebView webView;
     public JFXButton fermeButt;
 

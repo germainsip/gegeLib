@@ -1,9 +1,11 @@
 package org.gerblog.gui.buttons;
 
+import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.web.WebView;
 import org.gerblog.tools.FenTool;
 
@@ -17,6 +19,8 @@ public class LesBoutonsController extends FenTool implements Initializable {
     public Button btn2;
     public Label res;
     public Button fermeButt;
+    public ToggleButton toggleBtn;
+    public JFXToggleButton toggleBtnJfx;
 
 
     @Override
@@ -41,5 +45,17 @@ public class LesBoutonsController extends FenTool implements Initializable {
     }
 
 
+    public void toggleAction(ActionEvent actionEvent) {
+        if (toggleBtnJfx.isSelected()){
+            toggleBtn.setSelected(true);
+        } else {
+            toggleBtn.setSelected(false);
+        }
+        if (toggleBtn.isSelected()){
+            toggleBtnJfx.setSelected(true);
+        } else {
+            toggleBtnJfx.setSelected(false);
+        }
 
+    }
 }

@@ -30,7 +30,7 @@ public class GuiTool {
             //inscrire ici le couple nom du bouton et package/nom du fxml
             case "Les Boutons" -> "buttons/les_boutons";
             case "Les champs texte" -> "champs/les_champs";
-            //case "Les Sliders" -> "sliders/les_sliders";
+            case "Les Sliders" -> "sliders/les_sliders";
             default -> "default";
         };
     }

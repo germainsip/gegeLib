@@ -20,7 +20,6 @@ public class LesBoutonsController extends FenTool implements Initializable {
     public Label res;
     public Button fermeButt;
     public ToggleButton toggleBtn;
-    public JFXToggleButton toggleBtnJfx;
 
 
     @Override
@@ -46,16 +45,11 @@ public class LesBoutonsController extends FenTool implements Initializable {
 
 
     public void toggleAction(ActionEvent actionEvent) {
-        if (toggleBtnJfx.isSelected()){
-            toggleBtn.setSelected(true);
-        } else {
-            toggleBtn.setSelected(false);
-        }
-        if (toggleBtn.isSelected()){
-            toggleBtnJfx.setSelected(true);
-        } else {
-            toggleBtnJfx.setSelected(false);
-        }
+       if(toggleBtn.isSelected()){
+           res.setStyle("-fx-border-color: chartreuse; -fx-border-width: 5");
+       }else {
+           res.setStyle("");
+       }
 
     }
 }

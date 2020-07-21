@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.gerblog.libexemple.Exemple;
 import org.gerblog.tools.Exempliser;
+import org.gerblog.tools.FenTool;
 import org.gerblog.tools.GuiTool;
 
 import java.awt.*;
@@ -20,7 +21,7 @@ import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class MainController extends FenTool implements Initializable {
     public Hyperlink lienCours;
     public VBox listBox;
     final static Exemple ex = new Exemple();

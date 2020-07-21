@@ -16,6 +16,11 @@
   },
   {
     "id" : "4",
+    "name": "Les Charts",
+    "comment": "Les charts sont les élément permettant d'afficher des graphiques"
+  },
+  {
+    "id" : "5",
     "name": "Le Date picker",
     "comment": "Le date picker permet d'ajouter simplement une date dans un formulaire"
   }

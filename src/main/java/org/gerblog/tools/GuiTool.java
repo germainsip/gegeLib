@@ -31,6 +31,7 @@ public class GuiTool {
             case "Les Boutons" -> "buttons/les_boutons";
             case "Les champs texte" -> "champs/les_champs";
             case "Les Sliders" -> "sliders/les_sliders";
+            case "Les Charts" -> "pie/les_piecharts";
             default -> "default";
         };
     }

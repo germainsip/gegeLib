@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="82.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gerblog.gui.exemple.ExempleTileController">
+<AnchorPane prefHeight="80.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gerblog.gui.exemple.ExempleTileController">
    <children>
       <HBox fx:id="boitePrincipale" alignment="CENTER_LEFT" prefHeight="27.0" spacing="20.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton fx:id="genBtn" buttonType="RAISED" prefHeight="51.0" prefWidth="124.0" style="-fx-background-color: #88BA3F;" text="TestButt" textFill="WHITE" wrapText="true">
+            <JFXButton fx:id="genBtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="51.0" prefWidth="215.0" style="-fx-background-color: #88BA3F;" text="TestButt" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font></JFXButton>
-            <Label fx:id="commentLab" prefHeight="48.0" prefWidth="300.0" text="Label" wrapText="true" />
+            <Label fx:id="commentLab" prefWidth="300.0" text="Label" wrapText="true" />
             <ImageView fitHeight="90.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@simple_logo.png" />
@@ -27,7 +27,7 @@
                   <InnerShadow />
                </effect>
                <HBox.margin>
-                  <Insets left="80.0" />
+                  <Insets />
                </HBox.margin>
             </ImageView>
          </children>

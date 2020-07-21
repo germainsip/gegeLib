@@ -25,7 +25,7 @@ public class LesSlidersController extends FenTool implements Initializable, Chan
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadCours("les_sliders");
+        loadCours("les-slider");
         hSlide.valueProperty().addListener(this);
         vSlide.valueProperty().addListener(this);
         hSliderJFX.valueProperty().addListener(this);

@@ -5,6 +5,8 @@ Application desktop d'exemple d'utilisations des éléments de JavaFX
 
 Ce soft est mis à jour en fonction de l'avancement des ressources sur le [cours](https://germainsip.github.io/post/cours/java/javafxelmts/)
 
+Retrouvez le sur [github](https://github.com/germainsip/gegeLib)
+
 ## Utilisation
 
 - Téléchargez ou clonez le dépot
